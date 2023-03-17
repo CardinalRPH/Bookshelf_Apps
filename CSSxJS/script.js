@@ -119,6 +119,10 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log("Project Dicoding 'Belajar Membuat Front-End Web untuk Pemula' |  Rayhan Febriyan Saputra  | Bookshelf Apps");
 });
 
+let maindata = [];
+let searchdata = [];
+const localkey = "books";
+let editindex;
 
 document.getElementById('searchx').addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
@@ -126,6 +130,7 @@ document.getElementById('searchx').addEventListener("keypress", function (event)
         if ((this.value == "") || (this.value == null)) {
             // console.log("yess");
         } else {
+            searchdata = [];
             search();
         }
         // Trigger the button element with a click
@@ -134,11 +139,6 @@ document.getElementById('searchx').addEventListener("keypress", function (event)
 
 });
 
-
-let maindata = [];
-let searchdata = [];
-const localkey = "books";
-let editindex;
 function addbook() {
     let read = false;
     if ((bookname.value != "") || (writer.value != "") || (year.value != "")) {
