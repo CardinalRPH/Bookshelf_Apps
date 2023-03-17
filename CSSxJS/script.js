@@ -41,9 +41,6 @@ document.getElementById("modal-cancel").onclick = function () {
 
 const modaledit = document.getElementById("edit-modal");
 
-// document.getElementById("addbook").onclick = function () {
-//     modaladd.style.display = "block";
-// }
 
 document.getElementById("modal-cancel-edit").onclick = function () {
     modaledit.style.display = "none";
@@ -126,8 +123,13 @@ document.addEventListener('DOMContentLoaded', function () {
 document.getElementById('searchx').addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         event.preventDefault();
+        if ((this.value == "") || (this.value == null)) {
+            // console.log("yess");
+        } else {
+            search();
+        }
         // Trigger the button element with a click
-        search();
+        
     }
 
 });
@@ -562,15 +564,17 @@ function addmodal_clear() {
 
 function search() {
     let searchvalx = document.getElementById("searchx").value;
-    for (let i = 0; i < maindata.length; i++) {
-        if ((maindata[i].title).includes(searchvalx)) {
-            searchdata.push(maindata[i]);
-        }
-        if ((maindata[i].author).includes(searchvalx)) {
-            searchdata.push(maindata[i]);
-        }
-        if ((maindata[i].year).includes(searchvalx)) {
-            searchdata.push(maindata[i]);
+    if ((searchvalx == "") || (searchvalx != null)) {
+        for (let i = 0; i < maindata.length; i++) {
+            if ((maindata[i].title).includes(searchvalx)) {
+                searchdata.push(maindata[i]);
+            }
+            if ((maindata[i].author).includes(searchvalx)) {
+                searchdata.push(maindata[i]);
+            }
+            if ((maindata[i].year).includes(searchvalx)) {
+                searchdata.push(maindata[i]);
+            }
         }
     }
     document.dispatchEvent(new Event(SEARCH_EVENT));
