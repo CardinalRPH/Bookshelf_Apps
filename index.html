@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf Apps</title>
+    <link rel="stylesheet" href="CSSxJS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li id="reset-id">
+                    <h4 title="restore">Reset</h4>
+                </li>
+            </ul>
+            <div class="box">
+                <form name="search" id="searchid">
+                    <input type="text" class="input" id="searchx" name="txt" onfocus="checksearch2()" onblur="checksearch()" onmouseenter="onmouse1()" onmouseout="onmouse2()">
+                </form>
+                <i class="fas fa-search"></i>
+            
+            </div>
+        </nav>
+        <div class="header-container">
+            <div class="header-inner">
+                <div class="primary-bookimg">
+                    <img src="Assets\thebook.jpg" alt="">
+                </div>
+                <div class="primary-book-data">
+                    <div class="bookdata">
+                        <h1 id="titlep">Title</h1>
+                        <h2 id="writep">Author</h2>
+                        <h2 id="yearp">Year</h2>
+                        <h2 id="statusp">Status</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="ongoing-book">
+            <div class="container-title">
+                <button id="ongoing-btn">
+                    <h2>Ongoing ❯</h2>
+                </button>
+            </div>
+            <!-- here -->
+            <div class="widget-slide-content">
+                <div class="prev s-arrow">
+                    ❮
+                </div>
+                <div class="items" id="ogitems">
+                    <div class="item">
+                        <div class="item-blurr">
+                            <div class="check-box box-ctrl" title="Complete">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div class="delete-box box-ctrl">
+                                <i class="fa-solid fa-trash" title="Delete"></i>
+                            </div>
+                        </div>
+                        <img src="Assets\thebook.jpg" alt="">
+                        <div class="img-caption s-caption">
+                            <h3>TItle</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="next s-arrow m2">❯</div>
+            </div>
+        </div>
+        <div class="line-limit">
+            <div class="the-line"></div>
+        </div>
+        <div class="completed-book">
+            <div class="container-title">
+                <button id="complete-btn">
+                    <h2>Completed ❯</h2>
+                </button>
+            </div>
+            <!-- here -->
+            <div class="widget-slide-content">
+                <div class="prev s-arrow">
+                    ❮
+                </div>
+                <div class="items" id="cpitems">
+                    <div class="item">
+                        <div class="item-blurr">
+                            <div class="restore-box box-ctrl" title="Restore">
+                                <i class="fa-solid fa-arrow-rotate-left"></i>
+                            </div>
+                            <div class="delete-box box-ctrl" title="Delete">
+                                <i class="fa-solid fa-trash"></i>
+                            </div>
+                        </div>
+                        <img src="Assets\thebook.jpg" alt="">
+                        <div class="img-caption s-caption">
+                            <h3>TItle</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="next s-arrow m2">❯</div>
+            </div>
+        </div>
+    </main>
+    <div id="ongoing-modal" class="modal1">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close1 close">&times;</span>
+            <h2>Ongoing Book</h2>
+            <div class="modal-main">
+                <div class="the-grid">
+                    <div class="grid-container" id="grid-og">
+                        <div class="grid-item">
+                            <div class="items">
+                                <div class="item item-bymodal">
+                                    <div class="item-blurr">
+                                        <div class="check-box box-ctrl" title="Complete">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                        <div class="delete-box box-ctrl">
+                                            <i class="fa-solid fa-trash" title="Delete"></i>
+                                        </div>
+                                    </div>
+                                    <img src="Assets\thebook.jpg" alt="">
+                                    <div class="img-caption s-caption">
+                                        <h3>TItle</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="items">
+                                <div class="item item-bymodal">
+                                    <div class="item-blurr">
+                                        <div class="check-box box-ctrl" title="Complete">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                        <div class="delete-box box-ctrl">
+                                            <i class="fa-solid fa-trash" title="Delete"></i>
+                                        </div>
+                                    </div>
+                                    <img src="Assets\thebook.jpg" alt="">
+                                    <div class="img-caption s-caption">
+                                        <h3>TItle</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="items">
+                                <div class="item item-bymodal">
+                                    <div class="item-blurr">
+                                        <div class="check-box box-ctrl" title="Complete">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                        <div class="delete-box box-ctrl">
+                                            <i class="fa-solid fa-trash" title="Delete"></i>
+                                        </div>
+                                    </div>
+                                    <img src="Assets\thebook.jpg" alt="">
+                                    <div class="img-caption s-caption">
+                                        <h3>TItle</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="items">
+                                <div class="item item-bymodal">
+                                    <div class="item-blurr">
+                                        <div class="check-box box-ctrl" title="Complete">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                        <div class="delete-box box-ctrl">
+                                            <i class="fa-solid fa-trash" title="Delete"></i>
+                                        </div>
+                                    </div>
+                                    <img src="Assets\thebook.jpg" alt="">
+                                    <div class="img-caption s-caption">
+                                        <h3>TItle</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="items">
+                                <div class="item item-bymodal">
+                                    <div class="item-blurr">
+                                        <div class="check-box box-ctrl" title="Complete">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                        <div class="delete-box box-ctrl">
+                                            <i class="fa-solid fa-trash" title="Delete"></i>
+                                        </div>
+                                    </div>
+                                    <img src="Assets\thebook.jpg" alt="">
+                                    <div class="img-caption s-caption">
+                                        <h3>TItle</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="items">
+                                <div class="item item-bymodal">
+                                    <div class="item-blurr">
+                                        <div class="check-box box-ctrl" title="Complete">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                        <div class="delete-box box-ctrl">
+                                            <i class="fa-solid fa-trash" title="Delete"></i>
+                                        </div>
+                                    </div>
+                                    <img src="Assets\thebook.jpg" alt="">
+                                    <div class="img-caption s-caption">
+                                        <h3>TItle</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="items">
+                                <div class="item item-bymodal">
+                                    <div class="item-blurr">
+                                        <div class="check-box box-ctrl" title="Complete">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                        <div class="delete-box box-ctrl">
+                                            <i class="fa-solid fa-trash" title="Delete"></i>
+                                        </div>
+                                    </div>
+                                    <img src="Assets\thebook.jpg" alt="">
+                                    <div class="img-caption s-caption">
+                                        <h3>TItle</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="previewer">
+                    <div class="header-inner header-bymodal">
+                        <div class="primary-bookimg">
+                            <img src="Assets\thebook.jpg" alt="">
+                        </div>
+                        <div class="primary-book-data">
+                            <div class="bookdata bookdata-bymodal">
+                                <h1 id="ogmodal-title">Title</h1>
+                                <h2 id="ogmodal-author">Author</h2>
+                                <h2 id="ogmodal-year">Year</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="complete-modal" class="modal2">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close2 close">&times;</span>
+            <h2>Completed Book</h2>
+            <div class="modal-main">
+                <div class="the-grid">
+                    <div class="grid-container" id="grid-cp">
+                        <div class="grid-item">
+                            <div class="items">
+                                <div class="item item-bymodal">
+                                    <div class="item-blurr">
+                                        <div class="check-box box-ctrl" title="Complete">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                        <div class="delete-box box-ctrl">
+                                            <i class="fa-solid fa-trash" title="Delete"></i>
+                                        </div>
+                                    </div>
+                                    <img src="Assets\thebook.jpg" alt="">
+                                    <div class="img-caption s-caption">
+                                        <h3>TItle</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="items">
+                                <div class="item item-bymodal">
+                                    <div class="item-blurr">
+                                        <div class="check-box box-ctrl" title="Complete">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                        <div class="delete-box box-ctrl">
+                                            <i class="fa-solid fa-trash" title="Delete"></i>
+                                        </div>
+                                    </div>
+                                    <img src="Assets\thebook.jpg" alt="">
+                                    <div class="img-caption s-caption">
+                                        <h3>TItle</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="items">
+                                <div class="item item-bymodal">
+                                    <div class="item-blurr">
+                                        <div class="check-box box-ctrl" title="Complete">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                        <div class="delete-box box-ctrl">
+                                            <i class="fa-solid fa-trash" title="Delete"></i>
+                                        </div>
+                                    </div>
+                                    <img src="Assets\thebook.jpg" alt="">
+                                    <div class="img-caption s-caption">
+                                        <h3>TItle</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="items">
+                                <div class="item item-bymodal">
+                                    <div class="item-blurr">
+                                        <div class="check-box box-ctrl" title="Complete">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                        <div class="delete-box box-ctrl">
+                                            <i class="fa-solid fa-trash" title="Delete"></i>
+                                        </div>
+                                    </div>
+                                    <img src="Assets\thebook.jpg" alt="">
+                                    <div class="img-caption s-caption">
+                                        <h3>TItle</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="items">
+                                <div class="item item-bymodal">
+                                    <div class="item-blurr">
+                                        <div class="check-box box-ctrl" title="Complete">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                        <div class="delete-box box-ctrl">
+                                            <i class="fa-solid fa-trash" title="Delete"></i>
+                                        </div>
+                                    </div>
+                                    <img src="Assets\thebook.jpg" alt="">
+                                    <div class="img-caption s-caption">
+                                        <h3>TItle</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="items">
+                                <div class="item item-bymodal">
+                                    <div class="item-blurr">
+                                        <div class="check-box box-ctrl" title="Complete">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                        <div class="delete-box box-ctrl">
+                                            <i class="fa-solid fa-trash" title="Delete"></i>
+                                        </div>
+                                    </div>
+                                    <img src="Assets\thebook.jpg" alt="">
+                                    <div class="img-caption s-caption">
+                                        <h3>TItle</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="items">
+                                <div class="item item-bymodal">
+                                    <div class="item-blurr">
+                                        <div class="check-box box-ctrl" title="Complete">
+                                            <i class="fa-solid fa-check"></i>
+                                        </div>
+                                        <div class="delete-box box-ctrl">
+                                            <i class="fa-solid fa-trash" title="Delete"></i>
+                                        </div>
+                                    </div>
+                                    <img src="Assets\thebook.jpg" alt="">
+                                    <div class="img-caption s-caption">
+                                        <h3>TItle</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="previewer">
+                    <div class="header-inner header-bymodal">
+                        <div class="primary-bookimg">
+                            <img src="Assets\thebook.jpg" alt="">
+                        </div>
+                        <div class="primary-book-data">
+                            <div class="bookdata bookdata-bymodal">
+                                <h1 id="cpmodal-title">Title</h1>
+                                <h2 id="cpmodal-author">Author</h2>
+                                <h2 id="cpmodal-year">Year</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="add-book" id="addbook">
+        <i class="fa-solid fa-plus"></i>
+    </div>
+    <div id="add-modal" class="modal3">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <h2>Add Book</h2>
+            <div class="modal-main">
+                <div class="inputter">
+                    <form action="" id="primaryform">
+                        <div class="inputter-horizontal">
+                            <div class="add-book-img">
+                                <img src="Assets\thebook.jpg" alt="">
+                            </div>
+                            <div class="add-book-data">
+                                <div class="form__group">
+                                    <input type="text" class="form__input" id="book-name" placeholder="Book Name"
+                                        required="" />
+                                    <label  class="form__label">Book Name</label>
+                                </div>
+                                <div class="form__group">
+                                    <input type="text" class="form__input" id="writer" placeholder="Writer"
+                                        required="" />
+                                    <label  class="form__label">Writer</label>
+                                </div>
+                                <div class="form__group">
+                                    <input type="number" class="form__input" id="year" placeholder="Year"
+                                        required="" />
+                                    <label  class="form__label">Year</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="complete-check">
+                            <input type="checkbox" name="" id="isComplete">
+                            <label for="isComplete"><span><h4>Is Readed?</h4></span></label>
+                        </div>
+                    </form>
+                    <div class="button-modal">
+                        <button class="modal-btn modal-cncl" id="modal-cancel">Cancel</button>
+                        <button class="modal-btn modal-sub" id="modal-sub">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="edit-modal" class="modal4">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <h2>Edit Book</h2>
+            <div class="modal-main">
+                <div class="inputter">
+                    <form action="" id="primaryform">
+                        <div class="inputter-horizontal">
+                            <div class="add-book-img">
+                                <img src="Assets\thebook.jpg" alt="">
+                            </div>
+                            <div class="add-book-data">
+                                <div class="form__group">
+                                    <input type="text" class="form__input" id="book-name-edit" placeholder="Book Name"
+                                        required="" />
+                                    <label  class="form__label">Book Name</label>
+                                </div>
+                                <div class="form__group">
+                                    <input type="text" class="form__input" id="writer-edit" placeholder="Writer"
+                                        required="" />
+                                    <label  class="form__label">Writer</label>
+                                </div>
+                                <div class="form__group">
+                                    <input type="number" class="form__input" id="year-edit" placeholder="Year"
+                                        required="" />
+                                    <label  class="form__label">Year</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="complete-check">
+                            <input type="checkbox" name="" id="isComplete-edit">
+                            <label for="isComplete-edit"><span><h4>Is Readed?</h4></span></label>
+                        </div>
+                    </form>
+                    <div class="button-modal">
+                        <button class="modal-btn modal-cncl" id="modal-cancel-edit">Cancel</button>
+                        <button class="modal-btn modal-sub" id="modal-sub-edit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="CSSxJS\script.js"></script>
+</body>
+
+</html>
